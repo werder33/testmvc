@@ -1,0 +1,8 @@
+
+стили и скрипты на странице http://testmvc/admin/users не подключаются.
+<br />
+<b>Notice</b>:  Undefined index: /admin/public/media/assets/bootstrap/css/bootstrap.min.css in <b>C:\OpenServer\domains\test_mvc\vendor\Router.php</b> on line <b>62</b><br />
+error autoload<br />
+<b>Fatal error</b>:  Class 'app\administrator\controller\' not found in <b>C:\OpenServer\domains\test_mvc\vendor\Router.php</b> on line <b>72</b><br />
+
+Почему идет проверка в роутах?
