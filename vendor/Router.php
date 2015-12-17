@@ -29,21 +29,15 @@ class Router
     public function StartOne()
     {
         $url = $this->getUrl(); // url строка
-        // echo $url;
         $arr = $this->routes;   // роуты из массива app\route.php
 
 
         if (isset($arr[$url])) {
             $controller = $arr[$url];
-
             $controllerArray = explode('@', $controller);
             $controllerName = array_shift($controllerArray);
             $actionName = array_shift($controllerArray);
-            // echo "$controllerName<br> $actionName";
             $controllerFile = 'app\\controllers\\' . $controllerName;
-            //echo $controllerName;
-            //создаем объект контролера
-
             $controllerObj = new $controllerFile;
             $controllerObj->$actionName();
 
@@ -55,7 +49,7 @@ class Router
     public function StartAdmin()
     {
         $url = $this->getUrl(); // url строка
-        // echo $url;
+
         $arr = $this->adminRoutes;   // роуты из массива app\administrator\route.php
 
 
@@ -64,11 +58,7 @@ class Router
         $controllerArray = explode('@', $controller);
         $controllerName = array_shift($controllerArray);
         $actionName = array_shift($controllerArray);
-        // echo "$controllerName<br> $actionName";
         $controllerFile = 'app\\administrator\\controller\\' . $controllerName;
-        //echo $controllerName;
-        //создаем объект контролера
-        //  echo $controllerFile."<br />" . $actionName;
         $controllerObj = new $controllerFile;
         $controllerObj->$actionName();
 
